@@ -1,3 +1,4 @@
+import * as uuid from 'uuid'
 import { Injectable } from '@nestjs/common';
 import { EmailService } from 'src/email/email.service';
 
@@ -12,11 +13,11 @@ export class UsersService {
     await this.sendMemberJoinEmail(email, signupVerifyToken);
   }
 
-  private checkUserExists(email: string) {
+  private async checkUserExists(email: string) {
     return false;
   }
 
-  private saveUser(
+  private async saveUser(
     name: string,
     email: string,
     password: string,
@@ -30,5 +31,17 @@ export class UsersService {
       email,
       signupVerifyToken,
     );
+  }
+
+  async verifyEmail(signupVerifyToken: string): Promise<string>{
+    throw new Error('method not implemented')
+  }
+  
+  async login(email: string, password: string): Promise<string>{
+    throw new Error('method not implemented')
+
+  }
+  async getUserInfo(userId: string): Promise<string>{
+    throw new Error('method not implemented')
   }
 }

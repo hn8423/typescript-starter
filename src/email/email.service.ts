@@ -17,7 +17,7 @@ export class EmailService {
       service: 'Gmail',
       auth: {
         user: 'rolenche@gmail.com',
-        pass: 'hn8423777',
+        pass: 'nekf khzp qicu myfa',
       },
     });
   }
@@ -26,7 +26,7 @@ export class EmailService {
     emailAddress: string,
     signupVerifyToken: string,
   ) {
-    const baseUrl = 'http://locahost:3000';
+    const baseUrl = 'http://localhost:3000';
 
     const url = `${baseUrl}/users/email-verify?signupVerifyToken=${signupVerifyToken}`;
 
